@@ -141,3 +141,6 @@ body {
   text-align: left;
   display: none;
 }
+#str1,#str2,#str3{
+  display: none;
+}

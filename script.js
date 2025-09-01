@@ -1,14 +1,16 @@
-const ApiKey = "b5d4446e0932ee7ecbc53e6677f28a97";
+const ApiKey = "";
 const ApiUrl =
   "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
 const search = document.querySelector(".search input");
 const searchbtn = document.querySelector(".search button");
 const weatherIcon = document.querySelector(".weather-icon");
 
-
 async function checkWeather(city) {
     document.querySelector(".error").style.display ="none";
-  const response = await fetch(ApiUrl + city +`&appid=${ApiKey}`);
+    const part1 = document.getElementById('str1').innerText.trim();
+    const part2 = document.getElementById('str2').innerText.trim();
+    const part3 = document.getElementById('str3').innerText.trim();    
+  const response = await fetch(ApiUrl + city +`&appid=${part1}${part2}${part3}`);
   if(response.status == 404){
     document.querySelector(".error").style.display ="block";
     document.querySelector(".weather").style.display = "none";
